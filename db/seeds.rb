@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-p 'hey'
+Word.destroy_all
 
 words = File.open("db/words.txt").read.split
+words.each do |word|
+  if word.length > 2
+    Word.create(name: word)
+  end
+end
