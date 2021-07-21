@@ -1,2 +1,11 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<h3><%= @rand_word %></h3>
+
+<ul>
+  <% @rhyming_words.each do |word| %>
+    <li><%= word %></li>
+  <% end %>
+</ul>
