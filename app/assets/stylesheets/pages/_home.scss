@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+
+
+#player {
+  display: block;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.word-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  margin-top: 24px;
+}
+
+.word {
+  text-align: center;
+}
