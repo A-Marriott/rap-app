@@ -1,11 +1,11 @@
 <div id="player"></div>
 
-<a href="?q=boombap">Boombap</a>
-<a href="?q=trap">Trap</a>
-<a href="?q=drill">Drill</a>
-<a href="?q=lofi">Lofi</a>
-<a href="?q=grime">Grime</a>
-<a href="?q=jazz_rap">Jazz Rap</a>
+<a href="?q=boombap" onclick="location.reload()">Boombap</a>
+<a href="?q=trap" onclick="location.reload();">Trap</a>
+<a href="?q=drill" onclick="location.reload();">Drill</a>
+<a href="?q=lofi" onclick="location.reload();">Lofi</a>
+<a href="?q=grime" onclick="location.reload();">Grime</a>
+<a href="?q=jazz_rap" onclick="location.reload();">Jazz Rap</a>
 
 <h3><%= @rand_word %></h3>
 
@@ -44,6 +44,7 @@
 
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
+    console.log('hey')
     event.target.playVideo();
   }
 

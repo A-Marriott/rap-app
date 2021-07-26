@@ -34,7 +34,6 @@ class PagesController < ApplicationController
 
     @random_video_id = video_ids.sample
 
-# http://localhost:3000/posts/?query=M3
     # raise
   end
 end
