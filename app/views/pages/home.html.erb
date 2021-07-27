@@ -1,11 +1,13 @@
-<div id="player"></div>
+<iframe id="player" width="640" height="390"
+src="https://www.youtube.com/embed/<%= @random_video_id %>?autoplay=1&loop=1">
+</iframe>
 
-<a href="?q=boombap" onclick="location.reload()">Boombap</a>
-<a href="?q=trap" onclick="location.reload();">Trap</a>
-<a href="?q=drill" onclick="location.reload();">Drill</a>
-<a href="?q=lofi" onclick="location.reload();">Lofi</a>
-<a href="?q=grime" onclick="location.reload();">Grime</a>
-<a href="?q=jazz_rap" onclick="location.reload();">Jazz Rap</a>
+<a href="?q=boombap">Boombap</a>
+<a href="?q=trap">Trap</a>
+<a href="?q=drill">Drill</a>
+<a href="?q=lofi">Lofi</a>
+<a href="?q=grime">Grime</a>
+<a href="?q=jazz_rap">Jazz Rap</a>
 
 <h3><%= @rand_word %></h3>
 
@@ -14,45 +16,3 @@
     <p class="word"><%= word %></p>
   <% end %>
 </div>
-
-<script>
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '390',
-      width: '640',
-      videoId: '<%= @random_video_id %>',
-      playerVars: {
-        'autoplay': 1,
-        'playsinline': 1
-      },
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    });
-  }
-
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-    console.log('hey')
-    event.target.playVideo();
-  }
-
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  var done = false;
-  function onPlayerStateChange(event) {
-  }
-</script>
-
