@@ -9,22 +9,22 @@ class PagesController < ApplicationController
     rhyming_words_array = JSON.parse(URI.open(rhyming_word_url).read)[0...100]
     @rhyming_words = rhyming_words_array.map {|rhyme_hash| rhyme_hash["word"].capitalize }
 
-    search_string = 'freestyle_instrumental'
-
-    case params["q"]
-    when 'boombap'
-      search_string = 'boombap_instrumental'
-    when 'trap'
-      search_string = 'trap_instrumental'
-    when 'drill'
-      search_string = 'drill_instrumental'
-    when 'lofi'
-      search_string = 'lofi_instrumental'
-    when 'grime'
-      search_string = 'grime_instrumental'
-    when 'jazz_rap'
-      search_string = 'jazz_rap_instrumental'
-    end
+    search_string = case params["q"]
+                    when 'boombap'
+                      'boombap_instrumental'
+                    when 'trap'
+                      'trap_instrumental'
+                    when 'drill'
+                      'drill_instrumental'
+                    when 'lofi'
+                      'lofi_instrumental'
+                    when 'grime'
+                      'grime_instrumental'
+                    when 'jazz_rap'
+                      'jazz_rap_instrumental'
+                    else
+                      'freestyle_instrumental'
+                    end
 
     youtube_video_search_url = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=#{search_string}&maxResults=50&type=video&videoDuration=short&key=#{ENV['YOUTUBE_API_KEY']}"
 
