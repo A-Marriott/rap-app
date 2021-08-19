@@ -1,0 +1,2 @@
+class CreativePrompt < ApplicationRecord
+end
