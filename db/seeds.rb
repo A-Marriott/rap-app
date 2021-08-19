@@ -36,7 +36,7 @@ def init_creative_writing_prompts
   url = "https://stereostickman.com/100-songwriting-prompts-to-get-you-in-the-zone/"
   html = Nokogiri::HTML(URI.open(url).read)
   html.search('div[class=entry-content] ol li').each do |list|
-    p list.text unless list.text[0] == '\\'
+    CreativePrompt.create(prompt: list.text)
   end
 end
 
@@ -45,4 +45,4 @@ end
 
 # init_words
 # init_youtube_ids
-init_creative_writing_prompts
+# init_creative_writing_prompts
