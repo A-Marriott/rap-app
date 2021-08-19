@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 def init_words
   Word.destroy_all
 
@@ -29,7 +32,17 @@ def init_youtube_ids
   end
 end
 
+def init_creative_writing_prompts
+  url = "https://stereostickman.com/100-songwriting-prompts-to-get-you-in-the-zone/"
+  html = Nokogiri::HTML(URI.open(url).read)
+  html.search('div[class=entry-content] ol li').each do |list|
+    p list.text unless list.text[0] == '\\'
+  end
+end
+
+
 # Comment functions out as needed
 
 # init_words
 # init_youtube_ids
+init_creative_writing_prompts
