@@ -1,4 +1,4 @@
-This app serves as the backend to rap-app-frontend. Using an API, rap-app serves a list of YouTube videos from various genres of instrumental hip-hop (seeded from YouTube's API), a list of 1000 most common words, and 100 creative prompts.
+This app serves as the backend to [rap-app-frontend](https://github.com/A-Marriott/rap-app-frontend). Using an API, rap-app serves a list of YouTube videos from various genres of instrumental hip-hop (seeded from YouTube's API), a list of 1000 most common words, and 100 creative prompts.
 
 To run the app, make sure rails is installed. When inside the project file, run the following commands
 ```
