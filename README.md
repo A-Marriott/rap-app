@@ -8,4 +8,4 @@ rails db:create db:migrate db:seed (make sure the function calls inside the db/s
 rails s
 ```
 The server should now be up on running on localhost:3000, and making calls to /api/v1/youtube_videos should render a JSON of video ids.
-If this works, head over to [rap-app-frontend](https://github.com/A-Marriott/rap-app-frontend) to start the react server
+Once this works, head over to [rap-app-frontend](https://github.com/A-Marriott/rap-app-frontend) to start the react server
