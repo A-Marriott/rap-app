@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :youtube_videos, only: [ :index , :destroy]
+      resources :youtube_videos
       resources :words, only: [ :index ]
       resources :creative_prompts, only: [ :index ]
     end
